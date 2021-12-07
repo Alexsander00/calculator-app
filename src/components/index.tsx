@@ -2,6 +2,7 @@ import React from 'react'
 
 import styled from 'styled-components'
 
+import Display from './display'
 import GlobalStlye from './GlobalStyles'
 import Menu from './menu'
 
@@ -21,6 +22,7 @@ const App = () => (
 		<GlobalStlye />
 		<Container>
 			<Menu />
+			<Display value='0' />
 		</Container>
 	</React.StrictMode>
 )
