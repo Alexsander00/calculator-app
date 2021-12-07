@@ -14,5 +14,13 @@ const GlobalStlye = createGlobalStyle`
         height: 100vh;
         transition: background-color 0.5s;
     }
+
+    #root {
+        display: grid;
+        grid-template: "calc" / 1fr;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
 `
 export default GlobalStlye

@@ -30,9 +30,9 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			favicon: './src/public/images/favicon-32x32.png',
+			favicon: './public/images/favicon-32x32.png',
 			title: 'Frontend Mentor | Calculator app',
-			template: './src/public/index.html',
+			template: './public/index.html',
 		}),
 	],
 }
