@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import Display from './display'
 import GlobalStlye from './GlobalStyles'
+import Keyboard from './keyboard'
 import Menu from './menu'
 
 const Container = styled.div`
@@ -23,6 +24,7 @@ const App = () => (
 		<Container>
 			<Menu />
 			<Display value='0' />
+			<Keyboard />
 		</Container>
 	</React.StrictMode>
 )
