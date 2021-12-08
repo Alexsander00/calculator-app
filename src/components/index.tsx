@@ -2,6 +2,7 @@ import React from 'react'
 
 import styled from 'styled-components'
 
+import { large } from 'constants/layout'
 import { HistoryProvider } from 'context/historyContext'
 
 import Display from './display'
@@ -19,6 +20,10 @@ const Container = styled.div`
 	height: 90%;
 	justify-self: center;
 	width: 80%;
+
+	@media screen and (min-width: ${large}) {
+		justify-self: end;
+	}
 `
 
 const App = () => (

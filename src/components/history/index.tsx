@@ -1,6 +1,7 @@
 import { AiOutlineClose } from 'react-icons/ai'
 import styled from 'styled-components'
 
+import { large } from 'constants/layout'
 import useHistory from 'hooks/useHistory'
 import { IOperation } from 'types/IOperation'
 import Operations from 'types/Operations'
@@ -17,6 +18,12 @@ const Container = styled.ul<{ show: boolean }>`
 	position: absolute;
 	transition: bottom 0.5s ease-in-out;
 	width: 100%;
+
+	@media screen and (min-width: ${large}) {
+		display: flex;
+		grid-area: history;
+		position: static;
+	}
 `
 
 const CloseButton = styled(AiOutlineClose)`
@@ -26,6 +33,10 @@ const CloseButton = styled(AiOutlineClose)`
 	margin: 10px;
 	min-height: 35px;
 	min-width: 35px;
+
+	@media screen and (min-width: ${large}) {
+		display: none;
+	}
 `
 
 const History = () => {

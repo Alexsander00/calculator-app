@@ -1,6 +1,7 @@
 import { FaHistory } from 'react-icons/fa'
 import styled from 'styled-components'
 
+import { large } from 'constants/layout'
 import useHistory from 'hooks/useHistory'
 
 import ThemePicker from './themePicker'
@@ -33,6 +34,10 @@ const HistoryIcon = styled(FaHistory)`
 
 	&:hover {
 		background-color: ${({ theme }) => theme.keyPad.background};
+	}
+
+	@media screen and (min-width: ${large}) {
+		display: none;
 	}
 `
 
