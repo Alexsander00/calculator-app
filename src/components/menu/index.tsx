@@ -1,6 +1,8 @@
 import { FaHistory } from 'react-icons/fa'
 import styled from 'styled-components'
 
+import useHistory from 'hooks/useHistory'
+
 import ThemePicker from './themePicker'
 
 const Container = styled.div`
@@ -34,14 +36,20 @@ const HistoryIcon = styled(FaHistory)`
 	}
 `
 
-const Menu = () => (
-	<Container>
-		<Tittle>calc</Tittle>
-		<HistoryContainer>
-			<HistoryIcon role='button' />
-		</HistoryContainer>
-		<ThemePicker />
-	</Container>
-)
+const Menu = () => {
+	const { setShow } = useHistory()
+
+	const showHistory = () => setShow(true)
+
+	return (
+		<Container>
+			<Tittle>calc</Tittle>
+			<HistoryContainer>
+				<HistoryIcon role='button' onClick={showHistory} />
+			</HistoryContainer>
+			<ThemePicker />
+		</Container>
+	)
+}
 
 export default Menu

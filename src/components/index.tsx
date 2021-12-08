@@ -2,8 +2,11 @@ import React from 'react'
 
 import styled from 'styled-components'
 
+import { HistoryProvider } from 'context/historyContext'
+
 import Display from './display'
 import GlobalStlye from './GlobalStyles'
+import History from './history'
 import Keyboard from './keyboard'
 import Menu from './menu'
 
@@ -21,11 +24,14 @@ const Container = styled.div`
 const App = () => (
 	<React.StrictMode>
 		<GlobalStlye />
-		<Container>
-			<Menu />
-			<Display value='0' />
-			<Keyboard />
-		</Container>
+		<HistoryProvider>
+			<Container>
+				<Menu />
+				<Display value='0' />
+				<Keyboard />
+			</Container>
+			<History />
+		</HistoryProvider>
 	</React.StrictMode>
 )
 
