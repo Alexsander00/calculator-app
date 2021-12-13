@@ -73,9 +73,9 @@ export const Theme2: DefaultTheme = {
 		},
 	},
 	history: {
-		background: 'rgba(237, 237, 237, 0.5)',
+		background: 'hsl(0, 0%, 93%)',
 		items: {
-			background: 'rgb(209, 204, 204)',
+			background: 'hsl(0, 5%, 81%)',
 		},
 	},
 }
@@ -113,9 +113,9 @@ export const Theme3: DefaultTheme = {
 		},
 	},
 	history: {
-		background: 'rgba(29, 9, 52, 0.5)',
+		background: 'hsl(268, 70%, 12%)',
 		items: {
-			background: 'rgb(29, 9, 52)',
+			background: 'hsl(268, 70%, 18%)',
 		},
 	},
 }

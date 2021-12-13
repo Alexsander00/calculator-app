@@ -1,6 +1,7 @@
 const path = require('path')
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
@@ -25,7 +26,7 @@ module.exports = {
 		extensions: ['.js', '.jsx', '.ts', '.tsx'],
 	},
 	optimization: {
-		minimizer: [new TerserPlugin()],
+		minimizer: [new TerserPlugin(), new HtmlMinimizerPlugin()],
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
