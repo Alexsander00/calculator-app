@@ -3,25 +3,9 @@ import { fireEvent, render, screen } from 'utils/test'
 
 import Menu from '.'
 
-beforeEach(() => {
-	render(<Menu />)
-})
-
-it('renders', () => {
-	const tittle = screen.getByText(/calc/i)
-	const historyIcon = screen.getByRole('button')
-	const pickerTittle = screen.getByText(/theme/i)
-	const options = screen.getAllByText(/[123]/)
-	const button = screen.getByRole('switch')
-
-	expect(tittle).toBeInTheDocument()
-	expect(historyIcon).toBeInTheDocument()
-	expect(pickerTittle).toBeInTheDocument()
-	expect(options).toHaveLength(3)
-	expect(button).toBeInTheDocument()
-})
-
 it('changes the current theme on clicking the button', () => {
+	render(<Menu />)
+
 	const tittle = screen.getByText(/calc/i)
 	const button = screen.getByRole('switch')
 
