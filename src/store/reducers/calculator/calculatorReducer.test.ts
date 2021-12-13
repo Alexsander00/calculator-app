@@ -28,6 +28,31 @@ describe('action type is numberPressed', () => {
 			})
 		})
 
+		describe('when the current display is infinity or NaN', () => {
+			const cases = [
+				['infinity', '1', '1'],
+				['nan', '1', '1'],
+			]
+
+			test.each(cases)(
+				'returns a new state with display replaced by the payload',
+				(display, payload, expected) =>
+					expect(
+						calculatorReducer(
+							{
+								...defaultState,
+								display,
+							},
+							numberPressed(payload),
+						),
+					).toStrictEqual({
+						...defaultState,
+						display: expected,
+						prevButton: Buttons.Number,
+					}),
+			)
+		})
+
 		describe('when the payload is .', () => {
 			it('returns a new state with the display ending in .', () => {
 				const { display } = calculatorReducer(

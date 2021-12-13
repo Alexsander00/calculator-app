@@ -10,7 +10,13 @@ import calculateOperation from './utils/operation'
 function getDisplay(payload: string, { display, prevButton }: IStore) {
 	if (prevButton === Buttons.Operation && payload === '.') return '0.'
 	if (display === '0' && payload === '.') return '0.'
-	if (display === '0' || prevButton === Buttons.Operation) return payload
+	if (
+		display === '0' ||
+		display.toLowerCase() === 'infinity' ||
+		display.toLowerCase() === 'nan' ||
+		prevButton === Buttons.Operation
+	)
+		return payload
 
 	return concat(display, payload)
 }
