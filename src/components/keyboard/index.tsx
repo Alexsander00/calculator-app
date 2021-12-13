@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Operations from 'types/Operations'
+import { Operations } from 'types'
 
 import EqualsKey from './keys/equals'
 import NumberKey from './keys/number'

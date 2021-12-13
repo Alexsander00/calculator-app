@@ -3,8 +3,7 @@ import styled from 'styled-components'
 
 import { large } from 'constants/layout'
 import useHistory from 'hooks/useHistory'
-import { IOperation } from 'types/IOperation'
-import Operations from 'types/Operations'
+import { Operations, IOperation } from 'types'
 
 import Record from './Record'
 

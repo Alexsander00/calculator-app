@@ -1,5 +1,5 @@
 import { Key } from 'components/keyboard/keys'
-import Operations from 'types/Operations'
+import { Operations } from 'types'
 
 interface IOperationKey {
 	type: Operations
