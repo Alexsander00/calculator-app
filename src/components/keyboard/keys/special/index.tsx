@@ -1,6 +1,17 @@
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
-import { IKey, Key } from 'components/keyboard/keys'
+import Key from 'components/keyboard/keys'
+import { delPressed, resetPressed } from 'store/actions/actionCreators'
+
+export enum SpecialType {
+	Delete = 'DEL',
+	Reset = 'RESET',
+}
+
+interface ISpecialKey {
+	type: SpecialType
+}
 
 const CustomKey = styled(Key)`
 	background-color: ${({ theme }) => theme.keyPad.keys.special.background};
@@ -12,6 +23,16 @@ const CustomKey = styled(Key)`
 	}
 `
 
-const SpecialKey = ({ value }: IKey) => <CustomKey>{value}</CustomKey>
+export const SpecialKey = ({ type }: ISpecialKey) => {
+	const dispatch = useDispatch()
+	const onClick = () => {
+		if (type === SpecialType.Delete) {
+			dispatch(delPressed())
+			return
+		}
 
-export default SpecialKey
+		if (type === SpecialType.Reset) dispatch(resetPressed())
+	}
+
+	return <CustomKey onClick={onClick}>{type}</CustomKey>
+}

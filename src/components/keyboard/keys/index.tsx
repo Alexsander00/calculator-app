@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
-export interface IKey {
-	value: string
-}
-
-export const Key = styled.button`
+const Key = styled.button`
 	background-color: ${({ theme }) => theme.keyPad.keys.normal.background};
 	border-bottom: 5px solid ${({ theme }) => theme.keyPad.keys.normal.shadow};
 	border-radius: 10px;
@@ -16,3 +12,4 @@ export const Key = styled.button`
 		background-color: ${({ theme }) => theme.keyPad.keys.normal.shadow};
 	}
 `
+export default Key

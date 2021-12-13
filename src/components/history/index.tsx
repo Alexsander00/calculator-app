@@ -1,9 +1,10 @@
 import { AiOutlineClose } from 'react-icons/ai'
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
 import { large } from 'constants/layout'
 import useHistory from 'hooks/useHistory'
-import { Operations, IOperation } from 'types'
+import { getRecords } from 'store/selectors'
 
 import Record from './Record'
 
@@ -45,15 +46,7 @@ const History = () => {
 		setShow(false)
 	}
 
-	const records: IOperation[] = [
-		{
-			id: 1,
-			firstValue: '10',
-			type: Operations.Sum,
-			secondValue: '20',
-			result: '30',
-		},
-	]
+	const records = useSelector(getRecords)
 
 	return (
 		<Container show={show}>

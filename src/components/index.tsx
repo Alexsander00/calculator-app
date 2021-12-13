@@ -1,9 +1,11 @@
 import React from 'react'
 
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
 import { large } from 'constants/layout'
 import { HistoryProvider } from 'context/historyContext'
+import { getDisplay } from 'store/selectors'
 
 import Display from './display'
 import GlobalStlye from './GlobalStyles'
@@ -26,18 +28,22 @@ const Container = styled.div`
 	}
 `
 
-const App = () => (
-	<React.StrictMode>
-		<GlobalStlye />
-		<HistoryProvider>
-			<Container>
-				<Menu />
-				<Display value='0' />
-				<Keyboard />
-			</Container>
-			<History />
-		</HistoryProvider>
-	</React.StrictMode>
-)
+const App = () => {
+	const display = useSelector(getDisplay)
+
+	return (
+		<React.StrictMode>
+			<GlobalStlye />
+			<HistoryProvider>
+				<Container>
+					<Menu />
+					<Display value={display} />
+					<Keyboard />
+				</Container>
+				<History />
+			</HistoryProvider>
+		</React.StrictMode>
+	)
+}
 
 export default App

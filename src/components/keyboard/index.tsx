@@ -5,7 +5,7 @@ import { Operations } from 'types'
 import EqualsKey from './keys/equals'
 import NumberKey from './keys/number'
 import OperationKey from './keys/operation'
-import SpecialKey from './keys/special'
+import { SpecialKey, SpecialType } from './keys/special'
 
 const Container = styled.div`
 	background-color: ${({ theme }) => theme.keyPad.background};
@@ -28,27 +28,27 @@ const Container = styled.div`
 
 const Keyboard = () => (
 	<Container>
-		<NumberKey value='9' />
-		<NumberKey value='7' />
-		<NumberKey value='8' />
-		<SpecialKey value='DEL' />
+		<NumberKey number='9' />
+		<NumberKey number='7' />
+		<NumberKey number='8' />
+		<SpecialKey type={SpecialType.Delete} />
 
-		<NumberKey value='4' />
-		<NumberKey value='5' />
-		<NumberKey value='6' />
+		<NumberKey number='4' />
+		<NumberKey number='5' />
+		<NumberKey number='6' />
 		<OperationKey type={Operations.Sum} />
 
-		<NumberKey value='1' />
-		<NumberKey value='2' />
-		<NumberKey value='3' />
+		<NumberKey number='1' />
+		<NumberKey number='2' />
+		<NumberKey number='3' />
 		<OperationKey type={Operations.Subtraction} />
 
-		<NumberKey value='.' />
-		<NumberKey value='0' />
+		<NumberKey number='.' />
+		<NumberKey number='0' />
 		<OperationKey type={Operations.Division} />
 		<OperationKey type={Operations.Multiplication} />
 
-		<SpecialKey value='RESET' />
+		<SpecialKey type={SpecialType.Reset} />
 		<EqualsKey />
 	</Container>
 )

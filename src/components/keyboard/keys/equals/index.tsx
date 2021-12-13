@@ -1,6 +1,8 @@
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
-import { Key } from 'components/keyboard/keys'
+import Key from 'components/keyboard/keys'
+import { equalsPressed } from 'store/actions/actionCreators'
 
 const CustomKey = styled(Key)`
 	background-color: ${({ theme }) => theme.keyPad.keys.equals.background};
@@ -12,6 +14,11 @@ const CustomKey = styled(Key)`
 	}
 `
 
-const EqualsKey = () => <CustomKey>=</CustomKey>
+const EqualsKey = () => {
+	const dispatch = useDispatch()
+	const onClick = () => dispatch(equalsPressed())
+
+	return <CustomKey onClick={onClick}>=</CustomKey>
+}
 
 export default EqualsKey
