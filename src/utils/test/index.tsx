@@ -7,13 +7,15 @@ import { createStore } from 'redux'
 import { ThemeProvider } from 'context/themeContext'
 import { rootReducer } from 'store/reducers'
 
-const store = createStore(rootReducer)
+const Providers: React.FC = ({ children }) => {
+	const store = createStore(rootReducer)
 
-const Providers: React.FC = ({ children }) => (
-	<Provider store={store}>
-		<ThemeProvider>{children}</ThemeProvider>
-	</Provider>
-)
+	return (
+		<Provider store={store}>
+			<ThemeProvider>{children}</ThemeProvider>
+		</Provider>
+	)
+}
 
 const customRender = (ui: ReactElement, options?: RenderOptions) =>
 	render(ui, { wrapper: Providers, ...options })

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { IOperation } from 'types/IOperation'
+import { IOperation } from 'types'
 
 const Container = styled.li`
 	align-items: flex-end;
