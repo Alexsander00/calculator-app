@@ -19,6 +19,9 @@ function addCommas(number: string) {
 }
 
 export function format(number: string) {
+	if (number.toLowerCase() === 'infinity' || number.toLowerCase() === 'nan')
+		return number
+
 	if (number.includes('e') && number.length > maxLength)
 		return parseFloat(number).toPrecision(3)
 

@@ -25,6 +25,17 @@ describe('unformat function', () => {
 })
 
 describe('format function', () => {
+	describe('result is infinite or NaN', () => {
+		const cases = [
+			['infinity', 'infinity'],
+			['NaN', 'NaN'],
+		]
+
+		test.each(cases)('returns the result without format', (number, expected) =>
+			expect(format(number)).toBe(expected),
+		)
+	})
+
 	describe('length is less than or equal to the max length', () => {
 		describe('the number is not decimal', () => {
 			const cases = [
