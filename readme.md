@@ -12,7 +12,7 @@ You can see a live demo [here](https://alexsander00.github.io/calculator-app/).
 Users should be able to:
 
 - See the size of the elements adjust based on their device's screen size
-- Perform mathmatical operations like addition, subtraction, multiplication, and division
+- Perform mathematical operations like addition, subtraction, multiplication, and division
 - Adjust the color theme based on their preference
 - See the operation history
 
