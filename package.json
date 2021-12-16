@@ -1,4 +1,5 @@
 {
+	"private": true,
 	"homepage": "/calculator-app",
 	"scripts": {
 		"start": "webpack serve --config config/webpack.dev.js",
